@@ -3,7 +3,7 @@ import { Articulo } from "../modelos/articulo.model.";
 
 export class ArticuloService {
   articulosCambiados = new Subject<Articulo[]>();
-  inicioEdicio = new Subject<number>();
+  inicioEdicion = new Subject<number>();
 
   private articulos: Articulo[] = [
     new Articulo("Pan", 3, 24.6),
