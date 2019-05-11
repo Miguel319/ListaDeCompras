@@ -1,3 +1,72 @@
-<p>
-  compras-editar works!
-</p>
+<div class="row">
+  <div class="col-xs-12">
+    <form (ngSubmit)="alEnviar(f)" #f="ngForm">
+      <div class="row">
+        <div class="col-sm-5 form-group">
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            id="nombre"
+            class="form-control"
+            name="nombre"
+            ngModel
+            required
+          />
+        </div>
+        <div class="col-sm-2 form-group">
+          <label for="cantidad">Cantidad</label>
+          <input
+            type="number"
+            id="cantidad"
+            class="form-control"
+            name="cantidad"
+            ngModel
+            required
+            pattern="^[1-9]+[0-9]*$"
+          />
+        </div>
+        <div class="col-sm-2 form-group">
+          <label for="precio">Precio</label>
+          <input
+            type="number"
+            id="precio"
+            class="form-control"
+            name="precio"
+            ngModel
+            required
+            pattern="^[1-9]+[0-9]*$"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button
+            class="btn btn-success"
+            style="margin: 5px;"
+            type="submit"
+            [disabled]="!f.valid"
+          >
+            {{ modoEditar ? "Actualizar" : "Agregar" }}
+          </button>
+          <button
+            (click)="alEliminar()"
+            class="btn btn-danger"
+            style="margin: 5px;"
+            type="button"
+            *ngIf="modoEditar"
+          >
+            Eliminar
+          </button>
+          <button
+            (click)="alLimpiar()"
+            class="btn btn-info"
+            style="margin: 5px;"
+            type="button"
+          >
+            Limpiar
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
