@@ -45,11 +45,11 @@ export class ComprasEditarComponent implements OnInit, OnDestroy {
 
   alEliminar() {
     this.articuloService.eliminarArticulo(this.articuloEditadoIndex);
-    this.alEliminar();
+    this.alLimpiar();
   }
 
-  alEnviar(formulario: NgForm) {
-    const valor = formulario.value;
+  alEnviar(form: NgForm) {
+    const valor = form.value;
     const nuevoArticulo = new Articulo(
       valor.nombre,
       valor.cantidad,
@@ -66,6 +66,6 @@ export class ComprasEditarComponent implements OnInit, OnDestroy {
     }
 
     this.modoEditar = false;
-    formulario.reset();
+    form.reset();
   }
 }

@@ -5,11 +5,7 @@ export class ArticuloService {
   articulosCambiados = new Subject<Articulo[]>();
   inicioEdicion = new Subject<number>();
 
-  private articulos: Articulo[] = [
-    new Articulo("Pan", 3, 24.6),
-    new Articulo("Mantequilla", 2, 9.99),
-    new Articulo("Queso", 7, 14.99)
-  ];
+  private articulos: Articulo[] = [];
 
   getArticulo(indice: number): Articulo {
     return this.articulos[indice];
