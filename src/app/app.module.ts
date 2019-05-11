@@ -19,7 +19,8 @@ import { ArticuloService } from './servicio/articulo.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [ArticuloService],
   bootstrap: [AppComponent]

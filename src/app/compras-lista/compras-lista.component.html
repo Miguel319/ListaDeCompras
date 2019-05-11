@@ -1,14 +1,17 @@
 <div class="row">
   <div class="col-xs-10">
-      <app-compras-editar></app-compras-editar>
-    <hr>
-    <ul 
-      class="list-group">
+    <app-compras-editar></app-compras-editar>
+    <hr />
+    <ul class="list-group">
       <a
-      style="cursor: pointer"
-      *ngFor="let articulo of articulos; let i = index"
-      (click)="alEditarArticulo(i)">
-      {{articulo.nombre}} ({{articulo.cantidad}}) - RD${{articulo.precio}}
+        class="list-group-item"
+        style="cursor: pointer"
+        *ngFor="let articulo of articulos; let i = index"
+        (click)="alEditarArticulo(i)"
+      >
+        {{ articulo.nombre }} ({{ articulo.cantidad }}) - RD${{
+          articulo.precio
+        }}
       </a>
     </ul>
   </div>
